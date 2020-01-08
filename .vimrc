@@ -6,6 +6,7 @@ set ruler
 colorscheme slate
 set nocompatible
 set hlsearch
+set wildmenu
 
 "tab and indent related
 set tabstop=4
