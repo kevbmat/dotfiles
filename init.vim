@@ -1,26 +1,35 @@
 "plugins with vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 call plug#end()
 
-"use deoplete
-let g:deoplete#enable_at_startup = 1
+"configure lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
+
+"mapping Lexplore to Ctrl L"
+noremap <C-l> :Lexplore <CR>
 
 "tab completion
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-"nerd tree easy toggle
-nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
-
 "essential configurations
 set number
 set relativenumber
 syntax on
-set ruler
+set noshowmode
 set background=dark
 colorscheme gruvbox8_hard
 set nocompatible
