@@ -1,22 +1,24 @@
 "plugins with vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'lifepillar/vim-gruvbox8'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'sainnhe/gruvbox-material'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 "configure lightline
 let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'gitbranch#name'
+    \ },
+    \ 'colorscheme' : 'gruvbox_material'
+    \ }
 
 "mapping Lexplore to Ctrl L"
 noremap <C-l> :Lexplore <CR>
@@ -31,7 +33,7 @@ set relativenumber
 syntax on
 set noshowmode
 set background=dark
-colorscheme gruvbox8_hard
+colorscheme gruvbox-material
 set nocompatible
 set wildmenu
 
