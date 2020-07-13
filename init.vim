@@ -5,6 +5,7 @@ Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'sainnhe/gruvbox-material'
+Plug 'tomasiser/vim-code-dark'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
